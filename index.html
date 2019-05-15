@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Task 2</title>
+</head>
+<body>
+
+
+Enter string: <input type="text" name="string" placeholder="Enter text" id="inputdata" style="width:300 px">
+<br>
+<input type="button" value="Submit" onclick="myFunction()">
+
+<hr>
+<h1 class="example">Answer</h1>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+
+<script>
+function myFunction() {
+  var str=document.getElementById("inputdata").value;
+ 
+  var num=/[0-9]/g;
+  var vow=/([aieou]|[AIEOU])/g;
+  var cons=/[b-df-hj-np-tv-z]/gi;
+  var space=/\s/g;
+  var special=/[!@#$%^&*(),.?":{}|<>]/g;
+  
+  if(str.match(num))
+  {
+	var numcount=str.match(num);
+	document.getElementById("2").innerHTML="Number of digits is: "+numcount.length;
+  }
+  else
+  {
+	document.getElementById("2").innerHTML="No digits";
+  }
+  
+  if(str.match(cons))
+  {
+	var conscount=str.match(cons);
+	document.getElementById("4").innerHTML="Number of consonants is: "+conscount.length;
+  }
+  else
+  {
+	document.getElementById("4").innerHTML="No consonants";
+  }
+  
+  if(str.match(vow))
+  {
+	var vowcount=str.match(vow);
+	document.getElementById("3").innerHTML="Number of vowels is: "+vowcount.length;
+  }
+  else
+  {
+	document.getElementById("3").innerHTML="No vowels";
+  }
+  
+  if(str.match(space))
+  {
+	var spacecount=str.match(space);
+	document.getElementById("5").innerHTML="Number of spaces is: "+spacecount.length;
+  }
+  else
+  {
+	document.getElementById("5").innerHTML="No spaces";
+  }
+  
+  if(str.match(special))
+  {
+	var specialcount=str.match(special);
+	document.getElementById("6").innerHTML="Number of special characters is: "+specialcount.length;
+  }
+  else
+  {
+	document.getElementById("6").innerHTML="No special characters";
+  }
+}
+</script>
+
+</body>
+</html>
